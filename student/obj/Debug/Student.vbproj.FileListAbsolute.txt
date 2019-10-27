@@ -1,0 +1,15 @@
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.vbprojAssemblyReference.cache
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.AdminLogin.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.StudentLogin.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Resources.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.vbproj.GenerateResource.cache
+C:\Users\home\source\repos\Student\Student\bin\Debug\Student.exe.config
+C:\Users\home\source\repos\Student\Student\bin\Debug\Student.exe
+C:\Users\home\source\repos\Student\Student\bin\Debug\Student.pdb
+C:\Users\home\source\repos\Student\Student\bin\Debug\Student.xml
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.exe
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.xml
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.pdb
+C:\Users\home\source\repos\Student\Student\bin\Debug\Oracle.DataAccess.dll
+C:\Users\home\source\repos\Student\Student\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.vbproj.CopyComplete

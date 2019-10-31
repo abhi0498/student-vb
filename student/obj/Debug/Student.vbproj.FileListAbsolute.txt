@@ -13,3 +13,9 @@ C:\Users\home\source\repos\Student\Student\obj\Debug\Student.pdb
 C:\Users\home\source\repos\Student\Student\bin\Debug\Oracle.DataAccess.dll
 C:\Users\home\source\repos\Student\Student\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Users\home\source\repos\Student\Student\obj\Debug\Student.vbproj.CopyComplete
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.StudentDetails.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.updateStudent.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Adminform.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Teacherform.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.TeacherLogin.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Home.resources

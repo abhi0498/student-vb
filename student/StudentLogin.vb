@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports Oracle.DataAccess.Client
 Public Class StudentLogin
 
-    Public SQL As SqlControl
+    Public SQL As SqlControl = New SqlControl()
     Dim oradb As String = "Data Source=(DESCRIPTION=" + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=OTNSRVR)(PORT=1521)))" + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)));" + "User Id=scott;Password=tiger;"
     Private DBCmd As SqlCommand
     Public DBDA As SqlDataAdapter
@@ -17,29 +17,32 @@ Public Class StudentLogin
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim oradb As String = "Data Source=XE;User Id=hr;Password=oracle;"
-        Dim DBCon As New OracleConnection(oradb)
         Try
-            DBCon.Open()
-            Dim Query As String = "select * from users"
-            Dim cmd As New OracleCommand
-            cmd.Connection = DBCon
-            cmd.CommandText = Query
-            cmd.CommandType = CommandType.Text
-            Dim reader As OracleDataReader
+            SQL.ExecQuery("SELECT count(*) As UserCount
+  FROM [Student].[dbo].[Users] where username='" + userName.Text + "'and password ='" + Password.Text + "'")
+            SQL.DBDA.Fill(SQL.DBDS)
+            MsgBox(SQL.DBDS.Tables(0).Rows(0).Item("UserCount"))
 
+            If SQL.DBDS.Tables(0).Rows(0).Item("UserCount") = 1 Then
 
-            reader = cmd.ExecuteReader()
-
-
-            MsgBox(reader.Read())
+                MsgBox("Logged In")
+                SQL.DBDS.Reset()
+                updateStudent.Show()
+                updateStudent.Label9.Text = userName.Text
+            Else
+                MsgBox("Wrong Username or password")
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
-
         Finally
-            If DBCon.State = ConnectionState.Open Then DBCon.Close()
-
+            SQL.DBCon.Close()
         End Try
+
+
+
+
+
+
     End Sub
 
     Private Sub Password_TextChanged(sender As Object, e As EventArgs) Handles Password.TextChanged
@@ -60,5 +63,9 @@ Public Class StudentLogin
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        StudentDetails.Show()
     End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 Imports System.Data.SqlClient
 Public Class SqlControl
-    Public DBCon As New SqlConnection("Server=LAPTOP-OHD2Q4TE\DATABASE_IN;Database=Blood;User ID=sa;Password=123456")
+    Public DBCon As New SqlConnection("Server=LAPTOP-OHD2Q4TE\DATABASE_IN;Database=Student;User ID=sa;Password=123456")
     Public SQL As SqlControl
     Private DBCmd As SqlCommand
     Public DBDA As SqlDataAdapter
@@ -9,6 +9,8 @@ Public Class SqlControl
     Public RecordCount As Integer
     Public Params As New List(Of SqlParameter)
     Public DBDS As New DataSet
+    Public reader As SqlDataReader
+
 
 
 
@@ -18,9 +20,6 @@ Public Class SqlControl
 
     End Sub
 
-    Public Sub New(ConnectionString As String)
-        DBCon = New SqlConnection(ConnectionString)
-    End Sub
 
     Public Sub ExecQuery(Query As String)
         Try
@@ -36,6 +35,7 @@ Public Class SqlControl
             DBDT = New DataTable
             DBDA = New SqlDataAdapter(DBCmd)
             RecordCount = DBDA.Fill(DBDT)
+
             reader = DBCmd.ExecuteReader()
 
 
@@ -96,5 +96,23 @@ Public Class SqlControl
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Sub deleteQuery(Query As String)
+
+        Try
+
+
+            Dim command As New SqlCommand(Query, DBCon)
+
+            DBCon.Open()
+            command.ExecuteNonQuery()
+            MsgBox("Delete Successful")
+            DBCon.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Adminform
 
-    Dim sql As SqlControl = New SqlControl()
+    Dim sql As MySql = New MySql()
     Dim DBDS As DataSet = New DataSet()
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
@@ -22,6 +22,7 @@ Public Class Adminform
     Private Sub Adminform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         refreshTable("teachers")
         refreshTable("subjects")
+
     End Sub
 
     Private Sub TeacherView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles TeacherView.CellContentClick
@@ -51,16 +52,61 @@ Public Class Adminform
 
 
     Public Sub refreshTable(type As String)
+        Dim conn As New MySqlConnection("server=127.0.0.1;uid=root;port=3306;database=student;password=123456")
+
         DBDS.Reset()
-        sql.ExecQuery("Select * from " + type)
+
         If type = "teachers" Then
-            TeacherView.DataSource = sql.DBDT
+
+            conn.Open()
+            ' Dim adp As MySqlDataAdapter = New MySqlDataAdapter("select * from teachers", conn)
+
+            'Dim ds As DataSet = New DataSet()
+            'adp.Fill(ds)
+            'TeacherView.DataSource = ds
+            Dim myAdapter2 As New MySqlDataAdapter
+            Dim myCommand2 As New MySqlCommand("select * from teachers", conn)
+            myAdapter2.SelectCommand = myCommand2
+            Dim myData2 As MySqlDataReader
+            myData2 = myCommand2.ExecuteReader()
+            TeacherView.ColumnCount = 0
+            TeacherView.ColumnCount = 4
+            TeacherView.Columns(0).Name = "Username"
+
+            TeacherView.Columns(1).Name = "Semester"
+            TeacherView.Columns(2).Name = "Section"
+            TeacherView.Columns(3).Name = "Phone"
+            If myData2.HasRows Then
+                While myData2.Read()
+                    Dim row As String() = New String() {myData2(0).ToString, myData2(2).ToString, myData2(3).ToString, myData2(4).ToString}
+                    TeacherView.Rows.Add(row)
+                End While
+            End If
+
         ElseIf type = "subjects" Then
-            Subjects.DataSource = sql.DBDT
+            conn.Open()
+            Dim myAdapter2 As New MySqlDataAdapter
+            Dim myCommand2 As New MySqlCommand("select * from teachers", conn)
+            myAdapter2.SelectCommand = myCommand2
+            Dim myData2 As MySqlDataReader
+            myData2 = myCommand2.ExecuteReader()
+            Subjects.ColumnCount = 0
+            Subjects.ColumnCount = 3
+            Subjects.Columns(0).Name = "Subject Code"
+
+            Subjects.Columns(1).Name = "Subject Name"
+            Subjects.Columns(2).Name = "Semester"
+            If myData2.HasRows Then
+                While myData2.Read()
+                    Dim row As String() = New String() {myData2(0).ToString, myData2(1).ToString, myData2(2).ToString}
+                    Subjects.Rows.Add(row)
+                End While
+            End If
+
         End If
 
+        conn.Close()
 
-        sql.DBDA.Fill(DBDS)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click

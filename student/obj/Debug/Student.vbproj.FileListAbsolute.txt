@@ -19,3 +19,10 @@ C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Adminform.resources
 C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Teacherform.resources
 C:\Users\home\source\repos\Student\Student\obj\Debug\Student.TeacherLogin.resources
 C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Home.resources
+C:\Users\home\source\repos\Student\Student\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\home\source\repos\Student\Student\bin\Debug\Google.Protobuf.dll
+C:\Users\home\source\repos\Student\Student\bin\Debug\MySql.Data.dll
+C:\Users\home\source\repos\Student\Student\bin\Debug\Renci.SshNet.dll
+C:\Users\home\source\repos\Student\Student\bin\Debug\Google.Protobuf.xml
+C:\Users\home\source\repos\Student\Student\bin\Debug\MySql.Data.xml
+C:\Users\home\source\repos\Student\Student\bin\Debug\Renci.SshNet.xml

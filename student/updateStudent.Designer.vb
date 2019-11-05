@@ -36,6 +36,8 @@ Partial Class updateStudent
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'sigup
@@ -153,11 +155,26 @@ Partial Class updateStudent
         Me.Label9.TabIndex = 39
         Me.Label9.Text = "USN"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(721, 222)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 40
+        Me.DataGridView1.Visible = False
+        '
         'updateStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1040, 554)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.sigup)
         Me.Controls.Add(Me.phone)
@@ -174,6 +191,7 @@ Partial Class updateStudent
         Me.Controls.Add(Me.Label1)
         Me.Name = "updateStudent"
         Me.Text = "updateStudent"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -193,4 +211,5 @@ Partial Class updateStudent
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents DataGridView1 As DataGridView
 End Class

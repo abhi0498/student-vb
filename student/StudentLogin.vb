@@ -3,8 +3,7 @@ Imports System.Data.SqlClient
 Imports Oracle.DataAccess.Client
 Public Class StudentLogin
 
-    Public SQL As SqlControl = New SqlControl()
-    Dim oradb As String = "Data Source=(DESCRIPTION=" + "(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=OTNSRVR)(PORT=1521)))" + "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=ORCL)));" + "User Id=scott;Password=tiger;"
+    Public SQL As MySql = New MySql()
     Private DBCmd As SqlCommand
     Public DBDA As SqlDataAdapter
     Public DBDT As DataTable
@@ -18,15 +17,12 @@ Public Class StudentLogin
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         Try
-            SQL.ExecQuery("SELECT count(*) As UserCount
-  FROM [Student].[dbo].[Users] where username='" + userName.Text + "'and password ='" + Password.Text + "'")
-            SQL.DBDA.Fill(SQL.DBDS)
-            MsgBox(SQL.DBDS.Tables(0).Rows(0).Item("UserCount"))
 
-            If SQL.DBDS.Tables(0).Rows(0).Item("UserCount") = 1 Then
+            If SQL.Login("SELECT count(*) As UserCount
+  FROM users where username='" + userName.Text + "' and password ='" + Password.Text + "';") = 1 Then
 
                 MsgBox("Logged In")
-                SQL.DBDS.Reset()
+
                 updateStudent.Show()
                 updateStudent.Label9.Text = userName.Text
             Else
@@ -34,8 +30,7 @@ Public Class StudentLogin
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-        Finally
-            SQL.DBCon.Close()
+
         End Try
 
 
@@ -67,5 +62,9 @@ Public Class StudentLogin
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         StudentDetails.Show()
+    End Sub
+
+    Private Sub StudentLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

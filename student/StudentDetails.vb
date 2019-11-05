@@ -1,10 +1,11 @@
 ﻿Public Class StudentDetails
 
-    Dim SQL As SqlControl = New SqlControl()
+    Dim SQL As MySql = New MySql()
     Private Sub usn_TextChanged(sender As Object, e As EventArgs) Handles usn.TextChanged
-        SQL.ExecQuery("select count(*) as usercount from users where username='" + usn.Text + "'")
-        SQL.DBDA.Fill(SQL.DBDS)
-        If SQL.DBDS.Tables(0).Rows(0).Item("usercount") = 1 Then
+
+        Dim d As DataSet = SQL.SelectQuery("select count(*) as usercount from users where username='" + usn.Text + "'", DataGridView1)
+
+        If d.Tables(0).Rows(0).Item("usercount") = 1 Then
 
             Label10.Visible = True
 
@@ -14,7 +15,7 @@
 
 
         End If
-        SQL.DBDS.Reset()
+
 
     End Sub
 

@@ -88,7 +88,7 @@
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim i As Integer = e.RowIndex
         DBDS = sql.SelectQuery("Select * from marks", DataGridView1)
-
+        MsgBox(DBDS.Tables(0).Rows(i).Item("username").Trim())
         ComboBox1.SelectedIndex = ComboBox1.FindString(DBDS.Tables(0).Rows(i).Item("username").Trim())
         ComboBox2.SelectedIndex = ComboBox2.FindString(DBDS.Tables(0).Rows(i).Item("subject_code").Trim())
         TextBox1.Text = DBDS.Tables(0).Rows(i).Item("marks").ToString()

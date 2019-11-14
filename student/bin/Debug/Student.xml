@@ -32,6 +32,11 @@ Student
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Student.My.Resources.Resources.library_869061_1280">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Student.My.Resources.Resources.pencils_1280558_1920">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

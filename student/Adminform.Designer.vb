@@ -136,7 +136,7 @@ Partial Class Adminform
         '
         Me.Button5.Location = New System.Drawing.Point(703, 396)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.Size = New System.Drawing.Size(81, 28)
         Me.Button5.TabIndex = 64
         Me.Button5.Text = "Delete"
         Me.Button5.UseVisualStyleBackColor = True
@@ -145,7 +145,7 @@ Partial Class Adminform
         '
         Me.Button4.Location = New System.Drawing.Point(493, 396)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.Size = New System.Drawing.Size(89, 28)
         Me.Button4.TabIndex = 63
         Me.Button4.Text = "Update"
         Me.Button4.UseVisualStyleBackColor = True
@@ -154,7 +154,7 @@ Partial Class Adminform
         '
         Me.Button3.Location = New System.Drawing.Point(324, 396)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(80, 28)
         Me.Button3.TabIndex = 62
         Me.Button3.Text = "Insert"
         Me.Button3.UseVisualStyleBackColor = True
@@ -182,9 +182,10 @@ Partial Class Adminform
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(104, 315)
+        Me.Label6.Font = New System.Drawing.Font("Montserrat", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(114, 315)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 17)
+        Me.Label6.Size = New System.Drawing.Size(63, 20)
         Me.Label6.TabIndex = 59
         Me.Label6.Text = "Phone"
         '
@@ -198,9 +199,10 @@ Partial Class Adminform
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(104, 265)
+        Me.Label5.Font = New System.Drawing.Font("Montserrat", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(114, 265)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 17)
+        Me.Label5.Size = New System.Drawing.Size(74, 20)
         Me.Label5.TabIndex = 57
         Me.Label5.Text = "Section"
         '
@@ -214,9 +216,10 @@ Partial Class Adminform
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(104, 210)
+        Me.Label4.Font = New System.Drawing.Font("Montserrat", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(114, 207)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 17)
+        Me.Label4.Size = New System.Drawing.Size(90, 20)
         Me.Label4.TabIndex = 55
         Me.Label4.Text = "Semester"
         '
@@ -230,9 +233,10 @@ Partial Class Adminform
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(119, 150)
+        Me.Label3.Font = New System.Drawing.Font("Montserrat", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(114, 150)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 17)
+        Me.Label3.Size = New System.Drawing.Size(91, 20)
         Me.Label3.TabIndex = 53
         Me.Label3.Text = "Password"
         '
@@ -254,9 +258,10 @@ Partial Class Adminform
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(127, 101)
+        Me.Label7.Font = New System.Drawing.Font("Montserrat", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(114, 101)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(45, 17)
+        Me.Label7.Size = New System.Drawing.Size(60, 20)
         Me.Label7.TabIndex = 50
         Me.Label7.Text = "Name"
         '
@@ -588,11 +593,11 @@ Partial Class Adminform
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(229, 82)
+        Me.DataGridView3.Location = New System.Drawing.Point(120, 40)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.RowHeadersWidth = 51
         Me.DataGridView3.RowTemplate.Height = 24
-        Me.DataGridView3.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView3.Size = New System.Drawing.Size(611, 302)
         Me.DataGridView3.TabIndex = 0
         '
         'Adminform

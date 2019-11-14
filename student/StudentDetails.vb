@@ -23,9 +23,10 @@
         Try
 
 
-            SQL.InsertQuery("INSERT INTO student_details(username,name,branch,semester,section,phone) VALUES('" &
+            SQL.InsertQuery("INSERT INTO student_details(username,name,course,branch,semester,section,phone) VALUES('" &
      usn.Text & "','" &
      sname.Text & "','" &
+     ComboBox1.SelectedItem & "','" &
      branch.Text & "','" &
      sem.Text & "','" &
      section.Text & "','" &
@@ -37,14 +38,15 @@
     End Sub
 
     Private Sub cpassword_TextChanged(sender As Object, e As EventArgs)
-        If password.Text = cpassword.Text Then
-            Label11.Visible = False
-        Else
-            Label11.Visible = True
-        End If
+
     End Sub
 
     Private Sub StudentDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim DBDS As DataSet = New DataSet()
+        DBDS = SQL.SelectQuery("select name from courses", DataGridView1)
 
+        For Each row In DBDS.Tables(0).Rows
+            ComboBox1.Items.Add(row.Item("name"))
+        Next
     End Sub
 End Class

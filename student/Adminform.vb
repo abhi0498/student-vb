@@ -266,6 +266,36 @@ Public Class Adminform
                 End While
                 conn.Close()
             End If
+
+
+        ElseIf selectedTab.Name = "TabPage8" Then
+            DataGridView1.Rows.Clear()
+            Dim conn As MySqlConnection = sql.conn
+            Dim myAdapter2 As New MySqlDataAdapter
+            conn.Open()
+            Dim myCommand2 As New MySqlCommand("SELECT m.username,sd.course,sd.semester,sum(m.marks) as Total_marks FROM student.marks as m
+inner join student_details as sd on m.username=sd.username 
+group by m.username;", sql.conn)
+            myAdapter2.SelectCommand = myCommand2
+            Dim myData2 As MySqlDataReader
+            myData2 = myCommand2.ExecuteReader()
+            DataGridView3.DataSource = Nothing
+            DataGridView3.ColumnCount = 4
+
+            DataGridView3.Columns(0).Name = "USN "
+            DataGridView3.Columns(1).Name = "Course "
+            DataGridView3.Columns(2).Name = "Semester "
+            DataGridView3.Columns(3).Name = "Total Marks"
+
+
+            If myData2.HasRows Then
+                While myData2.Read()
+                    Dim row As String() = New String() {myData2(0).ToString, myData2(1).ToString, myData2(2).ToString, myData2(3).ToString}
+                    DataGridView3.Rows.Add(row)
+                End While
+                conn.Close()
+            End If
+
         End If
 
     End Sub

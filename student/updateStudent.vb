@@ -4,7 +4,7 @@
     Private Sub updateStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
-            Label9.Text = StudentLogin.userName.Text.Trim()
+
             Dim d As DataSet = SQL.SelectQuery("SELECT *
   FROM student_details where username='" + Label9.Text.Trim() + "'", DataGridView1)
 

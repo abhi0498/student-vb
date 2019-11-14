@@ -22,5 +22,20 @@ Student
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Student.My.Resources.Resources.avatar_2191918_1280">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Student.My.Resources.Resources.castle_336498_1280">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Student.My.Resources.Resources.pencils_1280558_1920">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

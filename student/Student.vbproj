@@ -128,6 +128,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Course.Designer.vb">
+      <DependentUpon>Course.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Course.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EnterMarks.Designer.vb">
       <DependentUpon>EnterMarks.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,12 @@
       <DependentUpon>Home.vb</DependentUpon>
     </Compile>
     <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marks.Designer.vb">
+      <DependentUpon>Marks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marks.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MySql.vb" />
@@ -195,8 +207,17 @@
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Course.resx">
+      <DependentUpon>Course.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterMarks.resx">
+      <DependentUpon>EnterMarks.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marks.resx">
+      <DependentUpon>Marks.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentDetails.resx">
       <DependentUpon>StudentDetails.vb</DependentUpon>
@@ -244,6 +265,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\castle-336498_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-2191918_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencils-1280558_1920.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

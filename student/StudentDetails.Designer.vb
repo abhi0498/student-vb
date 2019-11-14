@@ -34,8 +34,6 @@ Partial Class StudentDetails
         Me.Label5 = New System.Windows.Forms.Label()
         Me.phone = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cpassword = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.password = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.usn = New System.Windows.Forms.TextBox()
@@ -43,7 +41,6 @@ Partial Class StudentDetails
         Me.sigup = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,23 +143,6 @@ Partial Class StudentDetails
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Phone"
         '
-        'cpassword
-        '
-        Me.cpassword.Location = New System.Drawing.Point(202, 267)
-        Me.cpassword.Name = "cpassword"
-        Me.cpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.cpassword.Size = New System.Drawing.Size(166, 22)
-        Me.cpassword.TabIndex = 15
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(36, 270)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(121, 17)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Confirm Password"
-        '
         'password
         '
         Me.password.Location = New System.Drawing.Point(202, 212)
@@ -176,9 +156,9 @@ Partial Class StudentDetails
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(88, 215)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 17)
+        Me.Label8.Size = New System.Drawing.Size(53, 17)
         Me.Label8.TabIndex = 12
-        Me.Label8.Text = "Password"
+        Me.Label8.Text = "Course"
         '
         'usn
         '
@@ -223,17 +203,6 @@ Partial Class StudentDetails
         Me.Label10.Text = "USN already exists"
         Me.Label10.Visible = False
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Red
-        Me.Label11.Location = New System.Drawing.Point(208, 309)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(158, 17)
-        Me.Label11.TabIndex = 19
-        Me.Label11.Text = "Passwords donot match"
-        Me.Label11.Visible = False
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
@@ -254,12 +223,9 @@ Partial Class StudentDetails
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(904, 522)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.sigup)
-        Me.Controls.Add(Me.cpassword)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.password)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.phone)
@@ -296,8 +262,6 @@ Partial Class StudentDetails
     Friend WithEvents Label5 As Label
     Friend WithEvents phone As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents cpassword As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents password As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents usn As TextBox
@@ -305,6 +269,5 @@ Partial Class StudentDetails
     Friend WithEvents sigup As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents DataGridView1 As DataGridView
 End Class

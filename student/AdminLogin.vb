@@ -10,7 +10,7 @@
   FROM admin where username='" + userName.Text + "'and password ='" + Password.Text + "'") = 1 Then
 
                 MsgBox("Logged In")
-
+                Me.Close()
                 Adminform.Show()
             Else
                 MsgBox("Wrong Username or password")

@@ -32,19 +32,21 @@ Partial Class AdminLogin
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ControlDark
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Monotype Corsiva", 16.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(393, 349)
+        Me.Button1.Location = New System.Drawing.Point(428, 333)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(120, 47)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Login"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Password
         '
         Me.Password.Location = New System.Drawing.Point(428, 257)
         Me.Password.Name = "Password"
+        Me.Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Password.Size = New System.Drawing.Size(209, 22)
         Me.Password.TabIndex = 10
         '
@@ -89,6 +91,8 @@ Partial Class AdminLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Student.My.Resources.Resources.avatar_2191918_1280
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(933, 506)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Password)

@@ -15,44 +15,23 @@ Public Class StudentLogin
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        Marks.Show()
+    End Sub
 
-        Try
-
-            If SQL.Login("SELECT count(*) As UserCount
-  FROM users where username='" + userName.Text + "' and password ='" + Password.Text + "';") = 1 Then
-
-                MsgBox("Logged In")
-
-                updateStudent.Show()
-                updateStudent.Label9.Text = userName.Text
-            Else
-                MsgBox("Wrong Username or password")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-
-        End Try
-
-
-
-
-
+    Private Sub Password_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Password_TextChanged(sender As Object, e As EventArgs) Handles Password.TextChanged
+    Private Sub userName_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub userName_TextChanged(sender As Object, e As EventArgs) Handles userName.TextChanged
+    Private Sub Label3_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
 
     End Sub
 

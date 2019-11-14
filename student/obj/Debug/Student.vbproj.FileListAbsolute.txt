@@ -26,3 +26,6 @@ C:\Users\home\source\repos\Student\Student\bin\Debug\Renci.SshNet.dll
 C:\Users\home\source\repos\Student\Student\bin\Debug\Google.Protobuf.xml
 C:\Users\home\source\repos\Student\Student\bin\Debug\MySql.Data.xml
 C:\Users\home\source\repos\Student\Student\bin\Debug\Renci.SshNet.xml
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Course.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.Marks.resources
+C:\Users\home\source\repos\Student\Student\obj\Debug\Student.EnterMarks.resources

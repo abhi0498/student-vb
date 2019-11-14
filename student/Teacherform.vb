@@ -7,6 +7,10 @@
     End Sub
 
     Private Sub Teacherform_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        refreshTable()
+    End Sub
+
+    Public Sub refreshTable()
         DBDS = sql.SelectQuery("select username from student_details", DataGridView1)
 
         populateCombo(ComboBox1, "username")
@@ -36,7 +40,6 @@
         End If
         conn.Close()
     End Sub
-
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
 
     End Sub
@@ -62,28 +65,7 @@
         refreshTable()
     End Sub
 
-    Public Sub refreshTable()
-        conn.Open()
-        Dim myAdapter2 As New MySqlDataAdapter
-        Dim myCommand2 As New MySqlCommand("select * from marks", sql.conn)
-        myAdapter2.SelectCommand = myCommand2
-        Dim myData2 As MySqlDataReader
-        myData2 = myCommand2.ExecuteReader()
-        DataGridView1.DataSource = Nothing
-        DataGridView1.ColumnCount = 3
 
-        DataGridView1.Columns(0).Name = "USN"
-        DataGridView1.Columns(1).Name = "Subject Code"
-        DataGridView1.Columns(2).Name = "Marks"
-
-        If myData2.HasRows Then
-            While myData2.Read()
-                Dim row As String() = New String() {myData2(0).ToString, myData2(1).ToString, myData2(2).ToString}
-                DataGridView1.Rows.Add(row)
-            End While
-        End If
-        conn.Close()
-    End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim i As Integer = e.RowIndex
@@ -100,5 +82,6 @@
    SET marks = " & TextBox1.Text &
         " WHERE username='" & ComboBox1.SelectedItem & "' and subject_code='" & ComboBox2.SelectedItem & "'"
         sql.InsertQuery(query)
+        refreshTable()
     End Sub
 End Class

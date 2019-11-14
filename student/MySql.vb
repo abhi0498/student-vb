@@ -32,10 +32,10 @@ Public Class MySql
     Public Sub InsertQuery(q As String)
         Try
             conn.Open()
-            MsgBox(q)
+
             Dim cmd As MySqlCommand = New MySqlCommand(q, conn)
             cmd.ExecuteScalar()
-
+            MsgBox("Table altered successfully successfully")
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             conn.Close()
@@ -51,18 +51,20 @@ Public Class MySql
 
             Dim myCommand As New MySqlCommand(q, conn)
 
-            MsgBox(myCommand.CommandText)
+
             Dim myData As MySqlDataReader
 
             myData = myCommand.ExecuteReader()
             If myData.HasRows Then
                 myData.Read()
                 Dim count As Integer = myData(0)
+                conn.Close()
                 Return count
             End If
             conn.Close()
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
+            conn.Close()
         End Try
         conn.Close()
         Return 0
@@ -74,6 +76,7 @@ Public Class MySql
             Dim myCommand As New MySqlCommand(Query, conn)
             myCommand.ExecuteNonQuery()
             conn.Close()
+            MsgBox("Deleted  successfully")
         Catch ex As Exception
 
             MsgBox(ex.Message)

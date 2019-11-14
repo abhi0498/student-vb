@@ -154,13 +154,16 @@ Public Class Adminform
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Try
+            If TextBox7.Text = Nothing Then
+                MsgBox("Enter subject code")
+            Else
 
-            sql.InsertQuery("INSERT INTO subjects VALUES('" &
+                sql.InsertQuery("INSERT INTO subjects VALUES('" &
      TextBox7.Text & "','" &
      TextBox4.Text & "','" &
      TextBox5.Text & "')")
-            refreshTable("subjects")
-
+                refreshTable("subjects")
+            End If
         Catch ex As Exception
 
         End Try
@@ -272,6 +275,7 @@ Public Class Adminform
             DataGridView1.Rows.Clear()
             Dim conn As MySqlConnection = sql.conn
             Dim myAdapter2 As New MySqlDataAdapter
+            conn.Close()
             conn.Open()
             Dim myCommand2 As New MySqlCommand("SELECT m.username,sd.course,sd.semester,sum(m.marks) as Total_marks FROM student.marks as m
 inner join student_details as sd on m.username=sd.username 
@@ -295,8 +299,106 @@ group by m.username;", sql.conn)
                 End While
                 conn.Close()
             End If
-
+            conn.Close()
         End If
+
+
+    End Sub
+
+    Private Sub MyTabControl2_SelectedIndexChanged(ByVal sender As Object,
+                                          ByVal e As System.EventArgs) _
+        Handles TabControl2.SelectedIndexChanged
+        Dim indexOfSelectedTab As Integer = TabControl2.SelectedIndex
+        Dim selectedTab As System.Windows.Forms.TabPage = TabControl2.SelectedTab
+        If selectedTab.Name = "TabPage3" Then
+            DataGridView1.Rows.Clear()
+            Dim conn As MySqlConnection = sql.conn
+            Dim myAdapter2 As New MySqlDataAdapter
+            conn.Open()
+            Dim myCommand2 As New MySqlCommand("select * from courses", sql.conn)
+            myAdapter2.SelectCommand = myCommand2
+            Dim myData2 As MySqlDataReader
+            myData2 = myCommand2.ExecuteReader()
+            DataGridView1.DataSource = Nothing
+            DataGridView1.ColumnCount = 3
+
+            DataGridView1.Columns(0).Name = "Course Name"
+            DataGridView1.Columns(1).Name = "No. of Semesters"
+            DataGridView1.Columns(2).Name = "No. of Subjects/Sem"
+
+            If myData2.HasRows Then
+                While myData2.Read()
+                    Dim row As String() = New String() {myData2(0).ToString, myData2(1).ToString, myData2(2).ToString}
+                    DataGridView1.Rows.Add(row)
+                End While
+            End If
+            conn.Close()
+        End If
+    End Sub
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        sql.InsertQuery("insert into courses values('" + TextBox1.Text + "','" + ComboBox1.SelectedItem.ToString() + "','" + ComboBox2.SelectedItem.ToString() + "')")
+    End Sub
+
+
+    Private Sub TextBox5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox5.KeyPress
+
+        '97 - 122 = Ascii codes for simple letters
+        '65 - 90  = Ascii codes for capital letters
+        '48 - 57  = Ascii codes for numbers
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+
+    End Sub
+
+    Private Sub sem_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles sem.KeyPress
+
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        sql.InsertQuery("delete from student_details where username='" + TextBox6.Text + "'")
+        DataGridView2.Rows.Clear()
+        Dim conn As MySqlConnection = sql.conn
+        Dim myAdapter2 As New MySqlDataAdapter
+        conn.Open()
+        Dim myCommand2 As New MySqlCommand("select * from student_details", sql.conn)
+        myAdapter2.SelectCommand = myCommand2
+        Dim myData2 As MySqlDataReader
+        myData2 = myCommand2.ExecuteReader()
+        DataGridView2.DataSource = Nothing
+        DataGridView2.ColumnCount = 7
+
+        DataGridView2.Columns(0).Name = "USN "
+        DataGridView2.Columns(1).Name = "Name"
+        DataGridView2.Columns(2).Name = "Course"
+        DataGridView2.Columns(3).Name = "Branch"
+        DataGridView2.Columns(4).Name = "Semester"
+        DataGridView2.Columns(5).Name = "Section"
+        DataGridView2.Columns(6).Name = "Phone"
+
+        If myData2.HasRows Then
+            While myData2.Read()
+                Dim row As String() = New String() {myData2(0).ToString, myData2(1).ToString, myData2(2).ToString, myData2(3).ToString, myData2(4).ToString, myData2(5).ToString, myData2(6).ToString}
+                DataGridView2.Rows.Add(row)
+            End While
+            conn.Close()
+        End If
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
 
     End Sub
 End Class

@@ -73,6 +73,9 @@ Partial Class Adminform
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.TeacherView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,7 +106,7 @@ Partial Class Adminform
         Me.TabControl1.Location = New System.Drawing.Point(9, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1317, 477)
+        Me.TabControl1.Size = New System.Drawing.Size(1317, 554)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage1
@@ -175,6 +178,7 @@ Partial Class Adminform
         'phone
         '
         Me.phone.Location = New System.Drawing.Point(218, 312)
+        Me.phone.MaxLength = 10
         Me.phone.Name = "phone"
         Me.phone.Size = New System.Drawing.Size(166, 22)
         Me.phone.TabIndex = 60
@@ -291,7 +295,7 @@ Partial Class Adminform
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1309, 448)
+        Me.TabPage2.Size = New System.Drawing.Size(1309, 525)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Subjects"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -445,6 +449,7 @@ Partial Class Adminform
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(360, 214)
         Me.ComboBox2.Name = "ComboBox2"
@@ -489,6 +494,7 @@ Partial Class Adminform
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(360, 169)
         Me.ComboBox1.Name = "ComboBox1"
@@ -562,10 +568,13 @@ Partial Class Adminform
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.Button9)
+        Me.TabPage7.Controls.Add(Me.TextBox6)
+        Me.TabPage7.Controls.Add(Me.Label16)
         Me.TabPage7.Controls.Add(Me.DataGridView2)
         Me.TabPage7.Location = New System.Drawing.Point(4, 25)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(1309, 448)
+        Me.TabPage7.Size = New System.Drawing.Size(1309, 525)
         Me.TabPage7.TabIndex = 3
         Me.TabPage7.Text = "Student Details"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -600,6 +609,31 @@ Partial Class Adminform
         Me.DataGridView3.Size = New System.Drawing.Size(611, 302)
         Me.DataGridView3.TabIndex = 0
         '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(268, 462)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(166, 22)
+        Me.TextBox6.TabIndex = 69
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(158, 467)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(37, 17)
+        Me.Label16.TabIndex = 68
+        Me.Label16.Text = "USN"
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(541, 461)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(75, 23)
+        Me.Button9.TabIndex = 70
+        Me.Button9.Text = "Delete"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
         'Adminform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -627,6 +661,7 @@ Partial Class Adminform
         Me.TabPage6.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -684,4 +719,7 @@ Partial Class Adminform
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents TabPage8 As TabPage
     Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents Button9 As Button
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Label16 As Label
 End Class

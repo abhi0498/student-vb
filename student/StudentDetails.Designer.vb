@@ -136,6 +136,7 @@ Partial Class StudentDetails
         '
         Me.phone.Location = New System.Drawing.Point(652, 325)
         Me.phone.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.phone.MaxLength = 10
         Me.phone.Name = "phone"
         Me.phone.Size = New System.Drawing.Size(186, 28)
         Me.phone.TabIndex = 11
